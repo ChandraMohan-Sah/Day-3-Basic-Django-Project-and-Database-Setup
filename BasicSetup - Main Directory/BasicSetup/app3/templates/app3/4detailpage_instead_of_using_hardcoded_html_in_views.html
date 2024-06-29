@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Detail page : {{month}}</h1>
+    {{month_detail}}    
+    <h4><a href="{%url "home2" %}">Go back to Homepage</a></h4>
+    <h4><a href="{% url "month-activity" month=month %}">Favourite Activity </a></h4>
+{% endblock %}

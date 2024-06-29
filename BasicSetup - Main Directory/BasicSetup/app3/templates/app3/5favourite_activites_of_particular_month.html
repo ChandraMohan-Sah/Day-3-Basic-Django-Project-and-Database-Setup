@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1>{{month}}</h1>
+    {{activity}}
+    <br>
+    <a href="{% url "activity-detial" month=month activity=activity %}">Go To Activity Detail</a>
+    <br>
+    <a href="{% url "month-detail" month=month %}">Back to Month Detail</a>
+    <br>
+
+
+{% endblock %}

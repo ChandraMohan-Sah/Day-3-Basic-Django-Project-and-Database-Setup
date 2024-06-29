@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>For Loop has been used to iterate over the vales of key "months"<br>
+        "months" is a dict that has list as a value.So iterating over <br>
+        that list to fetch name of each month. </h3>
+
+    <h1>List of all months is given below</h1>
+    {% for month in months %}
+    <ul>
+        <li>
+            {{month}}
+        </li>
+    </ul>
+    {% endfor %}
+
+{% endblock %}

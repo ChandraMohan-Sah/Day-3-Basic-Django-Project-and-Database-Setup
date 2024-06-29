@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3><b>Note: We all ready have detail page url in "app3/month/".<br>
+        So, we dont need to think a lot about how to go to detail page from <br>
+        homepage. See Belows two approach to go to Detail Page Using Django Template.
+    </h3>
+
+    <h1>Approach 1</h1>
+        <h5>For Loop has been used to iterate over the vales of key "months"<br>
+            "months" is a dict that has list as a value.So iterating over <br>
+            that list to fetch name of each month. </h5>
+
+        <h3><b>List of All URLS Statically  Created with Hardcoded "/app3/{{months}}"</h3>
+            <h4>"months" is a key that has value as a list.</h4>
+            {% for month in months %}
+            <ul>
+                <li>
+                    <a href="/app3/aboutmonth/{{month}}">{{month}} </a>
+                </li>
+            </ul>
+            {% endfor %}
+
+            <hr>
+
+
+    <h1>Approach 2</h1>
+        <h3><b>List of All URLS Dynamically Created with { url "" args }</h3>
+            {% for month in months %}
+            <ul>
+                <li>
+                    <a href="{% url "month-detail"  month=month %}" >{{month}}</a>
+                </li>
+            </ul>
+            {% endfor %}
+
+
+
+    
+{% endblock %}
